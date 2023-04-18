@@ -117,7 +117,7 @@ function App() {
             </div>
           </div>
           <div className="product-info">
-            <h4 className="compagny">Sneaker Compagny</h4>
+            <h4 className="compagny">Sneaker Company</h4>
             <h1>Fall Limited Edition{'\n'}Sneakers</h1>
             <p>These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
             <div className="product-price-wrapper">
