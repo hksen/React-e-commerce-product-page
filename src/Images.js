@@ -9,6 +9,7 @@ import product3Thumb from './images/image-product-3-thumbnail.jpg';
 import product4 from './images/image-product-4.jpg';
 import product4Thumb from './images/image-product-4-thumbnail.jpg';
 import del from './images/icon-delete.svg';
+import logo from './images/logo.svg';
 
 const Images = {
     cart: IconCart,
@@ -22,6 +23,7 @@ const Images = {
     product4: product4, 
     product4Thumb: product4Thumb, 
     delete: del,
+    logo:logo,
 }
 
 export default Images; 

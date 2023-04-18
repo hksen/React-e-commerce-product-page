@@ -28,8 +28,8 @@ function Cart({ num, setNum, cart }){
             <img className="delete" onClick={() => deleteProduct()} alt="delete" src={Images.delete}></img>
           </div>
           ) : (
-            <div className="cart-product" style={{ color: 'var(--Dark-grayish-blue)', margin: "0"}}>
-            <p style={{ margin: '0'}}>Cart is empty</p>
+            <div className="empty-cart-product" style={{ color: 'var(--Dark-grayish-blue)', margin: "0"}}>
+            <p className="empty-cart">Your cart is empty.</p>
             </div>
           )}
           {num > 0 && cart ? (

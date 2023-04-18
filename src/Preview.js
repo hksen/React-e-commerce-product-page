@@ -51,20 +51,20 @@ function ProductPreview({ setPreview, image }){
               </div>
                 <div className="product-thumbnail padding50">
                 <div className="image-thumb-wrapper">
-                    <div className={previewImg === 1 ? "white-background" : "desactivated"}></div>
-                    <img className="image-thumbnail" onClick={() => setPreviewImg(1)} src={Images.product1Thumb} alt="product"></img>
+                    <div className={previewImg === 1 ? "white-background" : "desactivated"} onClick={() => setPreviewImg(1)}></div>
+                    <img className="image-thumbnail" src={Images.product1Thumb} alt="product"></img>
                 </div>
                 <div className="image-thumb-wrapper">
-                    <div className={previewImg === 2 ? "white-background" : "desactivated"}></div>
-                    <img className="image-thumbnail" onClick={() => setPreviewImg(2)} src={Images.product2Thumb} alt="product"></img>
+                    <div className={previewImg === 2 ? "white-background" : "desactivated"} onClick={() => setPreviewImg(2)}></div>
+                    <img className="image-thumbnail" src={Images.product2Thumb} alt="product"></img>
                 </div>
                 <div className="image-thumb-wrapper">
-                    <div className={previewImg === 3 ? "white-background" : "desactivated"}></div>
-                    <img className="image-thumbnail" onClick={() => setPreviewImg(3)} src={Images.product3Thumb} alt="product"></img>
+                    <div className={previewImg === 3 ? "white-background" : "desactivated"} onClick={() => setPreviewImg(3)}></div>
+                    <img className="image-thumbnail" src={Images.product3Thumb} alt="product"></img>
                 </div>
                 <div className="image-thumb-wrapper">
-                    <div className={previewImg === 4 ? "white-background" : "desactivated"}></div>
-                    <img className="image-thumbnail" onClick={() => setPreviewImg(4)} src={Images.product4Thumb} alt="product"></img>
+                    <div className={previewImg === 4 ? "white-background" : "desactivated"} onClick={() => setPreviewImg(4)}></div>
+                    <img className="image-thumbnail" src={Images.product4Thumb} alt="product"></img>
                 </div>
                 </div>
             </div>

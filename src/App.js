@@ -4,6 +4,7 @@ import Images from './Images';
 import ProductPreview from './Preview';
 import Cart from './Cart';
 import { ReactComponent as IconCart } from './images/icon-cart.svg';
+import { ReactComponent as Logo } from './images/logo.svg';
 
 
 function App() {
@@ -13,6 +14,19 @@ function App() {
   const [ cart, setCart ] = useState(false);
   const [ cartInfo, setCartInfo ] = useState(false);
   const [ num, setNum ] = useState(0);
+  const [ menu, showMenu ] = useState(false);
+
+  const Next = () => {
+    if(image !== 4){
+      setImage(image + 1);
+    }
+  }
+
+  const Prev = () => {
+    if(image !== 1){
+      setImage(image - 1);
+    }
+  }
 
   const itemsNum = (symbol) => {
     if(symbol === "+"){
@@ -42,13 +56,14 @@ function App() {
   return (
     <div className="App">
       {preview ? <ProductPreview setPreview={setPreview} image={image} /> : null}
-
+      <div className="b-background" aria-expanded={menu}></div>
       <div className="wrapper">
 
         <header>
           <div className="header-left">
-            <h1>sneakers</h1>
-            <ul>
+            <div className="hamburger" aria-expanded={menu} onClick={() => showMenu(!menu)}></div>
+            <Logo />
+            <ul className="menu">
               <li>Collections</li>
               <li>Men</li>
               <li>Women</li>
@@ -74,7 +89,13 @@ function App() {
         <main>
           <div className="product-images">
             <div className="produc-image-wrapper">
-              <img className="product1" src={imageState()} onClick={() => setPreview(true)} alt="product"></img>
+              <div className="product-1-wrapper">
+                <div className="prev-button-m" onClick={Prev}></div>
+                <div className="product-preview-c" onClick={() => setPreview(true)}></div>
+                <img className="product1" src={imageState()}  alt="product"></img>
+                <div className="next-button-m" onClick={Next}></div>
+              </div>
+
               <div className="product-thumbnail">
                 <div className="image-thumb-wrapper " onClick={() => setImage(1)}>
                     <div className={image === 1 ? "white-background" : "desactivated"}></div>
@@ -96,16 +117,18 @@ function App() {
             </div>
           </div>
           <div className="product-info">
-            <h4>Sneaker Compagny</h4>
+            <h4 className="compagny">Sneaker Compagny</h4>
             <h1>Fall Limited Edition{'\n'}Sneakers</h1>
             <p>These low-profile sneakers are your perfect casual wear companion.Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
-            <div className="product-price">
-              <h2>$125.00</h2>
-              <div className="promo">
-                <h3>50%</h3>
+            <div className="product-price-wrapper">
+              <div className="product-price">
+                <h2><span className="d">$</span>125.00</h2>
+                <div className="promo">
+                  <h3>50%</h3>
+                </div>
               </div>
+              <h4 className="last-price"><span className="d">$</span>250.00</h4>
             </div>
-            <h4 className="last-price">$250.00</h4>
             <div className="buy-product">
               <div className="how-many">
                 <p className="minus" onClick={() => itemsNum("-")}>-</p>
@@ -114,7 +137,7 @@ function App() {
               </div>
               <button className="add-cart"  onClick={() => addToCart()}>
               <div className="icon-cart-container">
-                <IconCart />
+                <IconCart height="16" width="18" viewBox="0 0 20 20"/>
               </div>
                 <h3>Add to cart</h3>
               </button>
